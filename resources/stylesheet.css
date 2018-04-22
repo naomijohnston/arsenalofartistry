@@ -1,0 +1,469 @@
+
+/*universal*/
+@font-face {
+	font-family: "TravelingTypewriter";
+	src: url("fonts/TravelingTypewriter.ttf");
+}
+
+html {
+	font-family: "TravelingTypewriter";
+ 	font-size: 16px;
+ 	background-color: black;
+}
+
+body {
+	padding-top: 5rem;
+}
+
+/*header*/
+
+header {
+border: solid blue 3px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top:0;
+  z-index: 1;
+  width: 100%;
+  height: 5rem;
+  background-color: black;
+  color: white;
+}
+
+header nav {
+	width: 100%
+}
+header ul {
+	display: flex; 
+	align-items: center;
+	justify-content: space-around;
+	padding: 0.75rem 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  padding-left: 30px;
+}
+
+.logo img {
+  width: 110px;
+  height: auto;
+  margin-right: 1rem;
+}
+
+/*links*/
+
+a:link {
+	color:white;
+	text-decoration: none;
+}
+
+a:visited {
+	color: white;
+	text-decoration: none;
+}
+
+a:hover {
+	color: turquoise;
+	text-decoration: none;
+}
+
+/*main banner
+
+
+/*photo carousel*/
+
+.carousel > input[type="radio"]:nth-child(1):checked ~ .carousel__prev > label:nth-child(5), .carousel > input[type="radio"]:nth-child(1):checked ~ .carousel__next > label:nth-child(2), .carousel > input[type="radio"]:nth-child(2):checked ~ .carousel__prev > label:nth-child(1), .carousel > input[type="radio"]:nth-child(2):checked ~ .carousel__next > label:nth-child(3), .carousel > input[type="radio"]:nth-child(3):checked ~ .carousel__prev > label:nth-child(2), .carousel > input[type="radio"]:nth-child(3):checked ~ .carousel__next > label:nth-child(4), .carousel > input[type="radio"]:nth-child(4):checked ~ .carousel__prev > label:nth-child(3), .carousel > input[type="radio"]:nth-child(4):checked ~ .carousel__next > label:nth-child(5), .carousel > input[type="radio"]:nth-child(5):checked ~ .carousel__prev > label:nth-child(4), .carousel > input[type="radio"]:nth-child(5):checked ~ .carousel__next > label:nth-child(1) {
+  opacity: 1 !important;
+  z-index: 3;
+}
+.carousel {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel > input[type="radio"] {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  top: 0;
+}
+ 
+.carousel > input[type="radio"]:checked ~ .carousel__items .carousel__item, .carousel > input[type="radio"]:checked ~ .carousel__prev > label, .carousel > input[type="radio"]:checked ~ .carousel__next > label { opacity: 0; }
+ 
+.carousel > input[type="radio"]:nth-child(1):checked ~ .carousel__items .carousel__item:nth-child(1) { opacity: 1; }
+ 
+.carousel > input[type="radio"]:nth-child(1):checked ~ .carousel__nav > label:nth-child(1) {
+  background: #ccc;
+  cursor: default;
+  pointer-events: none;
+}
+
+.carousel > input[type="radio"]:nth-child(2):checked ~ .carousel__items .carousel__item:nth-child(2) { opacity: 1; }
+ 
+.carousel > input[type="radio"]:nth-child(2):checked ~ .carousel__nav > label:nth-child(2) {
+  background: #ccc;
+  cursor: default;
+  pointer-events: none;
+}
+
+.carousel > input[type="radio"]:nth-child(3):checked ~ .carousel__items .carousel__item:nth-child(3) { opacity: 1; }
+ 
+.carousel > input[type="radio"]:nth-child(3):checked ~ .carousel__nav > label:nth-child(3) {
+  background: #ccc;
+  cursor: default;
+  pointer-events: none;
+}
+ 
+.carousel > input[type="radio"]:nth-child(4):checked ~ .carousel__items .carousel__item:nth-child(4) { opacity: 1; }
+ 
+.carousel > input[type="radio"]:nth-child(4):checked ~ .carousel__nav > label:nth-child(4) {
+  background: #ccc;
+  cursor: default;
+  pointer-events: none;
+}
+ 
+.carousel > input[type="radio"]:nth-child(5):checked ~ .carousel__items .carousel__item:nth-child(5) { opacity: 1; }
+ 
+.carousel > input[type="radio"]:nth-child(5):checked ~ .carousel__nav > label:nth-child(5) {
+  background: #ccc;
+  cursor: default;
+  pointer-events: none;
+}
+ 
+.carousel__items {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  width: 90%;
+  height: 600px;
+  position: relative;
+}
+
+.carousel__item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90%;
+  height: 600px;
+  z-index: 1;
+  -o-transition: opacity 2s;
+  transition: opacity 2s;
+  -webkit-transition: opacity 2s;
+}
+
+.carousel__item img {
+  width: 100%;
+  vertical-align: middle;
+}
+ 
+.carousel__prev > label, .carousel__next > label {
+  border: 1px solid #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  display: block;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+  -webkit-transition: all .3s ease;
+  opacity: 0;
+  z-index: 2;
+}
+ 
+.carousel__prev > label:hover, .carousel__prev > label:focus, .carousel__next > label:hover, .carousel__next > label:focus { opacity: .5 !important; }
+ 
+.carousel__prev > label:before, .carousel__prev > label:after, .carousel__next > label:before, .carousel__next > label:after {
+  content: "";
+  position: absolute;
+  width: inherit;
+  height: inherit;
+}
+ 
+.carousel__prev > label:before, .carousel__next > label:before {
+  background: -webkit-gradient(linear, left bottom, left top, from(#fff), color-stop(10%, #fff), color-stop(10%, rgba(51, 51, 51, 0))),  -webkit-gradient(linear, right top, left top, from(#fff), color-stop(10%, #fff), color-stop(10%, rgba(51, 51, 51, 0)));
+  background: -webkit-linear-gradient(bottom, #fff 0%, #fff 10%, rgba(51, 51, 51, 0) 10%),  -webkit-linear-gradient(right, #fff 0%, #fff 10%, rgba(51, 51, 51, 0) 10%);
+  background: -o-linear-gradient(bottom, #fff 0%, #fff 10%, rgba(51, 51, 51, 0) 10%),  -o-linear-gradient(right, #fff 0%, #fff 10%, rgba(51, 51, 51, 0) 10%);
+  background: linear-gradient(to top, #fff 0%, #fff 10%, rgba(51, 51, 51, 0) 10%),  linear-gradient(to left, #fff 0%, #fff 10%, rgba(51, 51, 51, 0) 10%);
+  width: 60%;
+  height: 60%;
+  top: 20%;
+}
+ 
+.carousel__prev > label { left: 2%; }
+ 
+.carousel__prev > label:before {
+  left: 35%;
+  top: 20%;
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+ 
+.carousel__next > label { right: 2%; }
+ 
+.carousel__next > label:before {
+  left: 10%;
+  -ms-transform: rotate(315deg);
+  transform: rotate(315deg);
+  -webkit-transform: rotate(315deg);
+}
+ 
+.carousel__nav {
+  position: absolute;
+  bottom: 3%;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  z-index: 3;
+}
+ 
+.carousel__nav > label {
+  border: 1px solid #fff;
+  display: inline-block;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0 .125%;
+  width: 20px;
+  height: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*art page w/ photo album*/
+
+.album {
+	display: flex;
+
+}
+
+div.gallery {
+	display: block;
+    margin: 5px;
+    border: 1px solid #ccc;
+    width: 180px;
+}
+
+div.gallery:hover {
+    border: 1px solid #777;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+	color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*Photgography Page*/
+
+.album {
+  display: flex;
+  margin-top: 1rem;
+}
+
+div.gallery {
+  display: block;
+    margin: 5px;
+    border: 1px solid #ccc;
+    width: 180px;
+}
+
+div.gallery:hover {
+    border: 1px solid #777;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+  color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*Newsletter*/
+
+.blog {
+	border: solid blue 3px;
+	display: inline-block;
+	flex-direction: column;
+	width: 90%;
+	height: 40rem;
+}
+
+#newsletter {
+	margin-left: 1rem;
+	margin-top: 1rem;
+	font-size: 3rem;
+	font-weight: bold;
+}
+
+/*blog navigation*/
+
+.blognavigation {
+	position: fixed;
+	left: 91%;
+	width: 8%;
+	height: 40rem;
+  margin-top: 1rem;
+	background-color: grey;
+
+}
+
+.innerblognav {
+	margin-top: 1rem;
+}
+
+.blognavigation h1 {
+	font-size: 2rem;
+}
+
+.blognavigation p {
+	margin-left: 1rem;
+}
+
+.blognavigation ul {
+	  list-style-type: circle;
+	  margin-left: 3rem;
+}
+
+/*blog entry*/
+
+.blogentry {
+	background-color: white;
+	width: 100%;
+	height: 100%;
+
+}
+
+.entry {
+	margin: 3rem;
+}
+
+.entry h1 {
+	font-size: 3rem;
+	font-weight: bold;
+	padding-bottom: 1rem;
+}
+
+.entry p {
+	
+}
+
+/*footer*/
+
+footer {
+  display: flex;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 7rem;
+  margin-left: 2rem;
+  background-color: black;
+  color: white;
+}
+
+.container {
+  width: 50%;
+  height: 2rem;
+  margin: auto 0;
+  }
+
+  .face {
+
+  }
+
+  .face img{ 
+    float: right;
+    width: auto;
+    height: 7rem;
+  }
+  
+
+
+
+
+/*Contact Page */
+
+
+  /* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */  
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+    background-color: grey;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+/* Add a background color and some padding around the form */
+.contact {
+    border-radius: 5px;
+    background-color: black;
+    padding: 20px;
+    width: 60%;
+    margin: 0 auto;
+}
